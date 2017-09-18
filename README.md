@@ -11,3 +11,29 @@ index sam/bam files (this creates SRR1234567.sorted.bam.bai file)
 ```shell
 samtools index SRR1234567/SRR1234567.sorted.bam
 ```
+
+count the number of reads in sam/bam files
+```shell
+samtools view -c SRR1234567/SRR1234567.bam
+```
+
+count the number of mapped reads in sam/bam files
+```shell
+samtools view -F 4 -c SRR1234567/SRR1234567.bam
+```
+
+count the number of unmapped reads in sam/bam files
+```shell
+samtools view -f 4 -c SRR1234567/SRR1234567.bam
+```
+
+## Dealing with fastq files
+count the number of reads in fastq files
+```shell
+cat SRR1234567/SRR1234567.fastq | echo $((`wc -l` / 4))
+```
+
+count the number of reads in gzipped fastq files
+```shell
+zcat SRR1234567/SRR1234567.fastq | echo $((`wc -l` / 4))
+```
