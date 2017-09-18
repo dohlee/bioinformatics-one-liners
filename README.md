@@ -37,3 +37,14 @@ count the number of reads in gzipped fastq files
 ```shell
 zcat SRR1234567/SRR1234567.fastq.gz | echo $((`wc -l` / 4))
 ```
+
+## Linux basics
+show the size of subdirectories
+```shell
+du -h
+```
+
+only show the size of current directory
+```shell
+du -sh
+```
