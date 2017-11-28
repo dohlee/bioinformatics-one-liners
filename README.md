@@ -42,6 +42,16 @@ count the number of reads in gzipped fastq files
 zcat SRR1234567/SRR1234567.fastq.gz | echo $((`wc -l` / 4))
 ```
 
+## cut
+print only the second column of the tab-delimited file
+```shell
+cat file.txt | cut -f 2
+```
+
+convert tsv to csv
+```shell
+cat file.tsv | cut -f - --output-delimiter , > file.csv
+```
 ## Linux basics
 show the size of subdirectories
 ```shell
