@@ -27,6 +27,10 @@ count the number of unmapped reads in sam/bam files
 samtools view -f 4 -c SRR1234567/SRR1234567.bam
 ```
 
+show statistics of sam/bam files
+```shell
+samtools stats SRR1234567/SRR1234567.bam
+```
 ## Dealing with fastq files
 count the number of reads in fastq files
 ```shell
