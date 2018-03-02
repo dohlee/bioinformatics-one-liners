@@ -62,3 +62,9 @@ only show the size of current directory
 ```shell
 du -sh
 ```
+## Statistics
+Multiple testing correction
+```
+from statsmodels.stats import multitest
+reject, pvals_corrected, alphacSidak, alphacBonf = multitest.multipletests(p_values, method='fdr_bh')
+```
