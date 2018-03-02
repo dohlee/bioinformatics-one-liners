@@ -64,7 +64,7 @@ du -sh
 ```
 ## Statistics
 Multiple testing correction
-```
+```python
 from statsmodels.stats import multitest
 reject, pvals_corrected, alphacSidak, alphacBonf = multitest.multipletests(p_values, method='fdr_bh')
 ```
