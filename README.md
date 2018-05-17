@@ -72,6 +72,11 @@ only show the size of current directory
 ```shell
 du -sh
 ```
+
+print a file except the first line
+```shell
+cat file.txt | tail -n + 2
+```
 ## Statistics
 Multiple testing correction
 ```python
