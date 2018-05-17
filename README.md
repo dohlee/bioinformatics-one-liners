@@ -48,6 +48,16 @@ print only the second column of the tab-delimited file
 cat file.txt | cut -f 2
 ```
 
+print only the first column of the comma-delimited file
+```shell
+cat file.txt | cut -d',' -f 1
+```
+
+print the first and second columns of the comma-delimited file
+```shell
+cat file.txt | cut -d',' -f 1,2
+```
+
 convert tsv to csv
 ```shell
 cat file.tsv | cut -f - --output-delimiter , > file.csv
