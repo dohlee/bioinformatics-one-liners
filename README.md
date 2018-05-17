@@ -75,7 +75,7 @@ du -sh
 
 print a file except first line
 ```shell
-cat file.txt | tail -n + 2
+cat file.txt | tail -n +2
 ```
 ## Statistics
 Multiple testing correction
