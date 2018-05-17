@@ -73,7 +73,7 @@ only show the size of current directory
 du -sh
 ```
 
-print a file except the first line
+print a file except first line
 ```shell
 cat file.txt | tail -n + 2
 ```
