@@ -87,6 +87,11 @@ print a file except first line
 ```shell
 cat file.txt | tail -n +2
 ```
+
+prepend a line to a file
+```shell
+sed '1i header' file.txt > prepended_file.txt
+```
 ## Statistics
 Multiple testing correction
 ```python
