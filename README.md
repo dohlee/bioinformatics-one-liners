@@ -67,6 +67,11 @@ convert tsv to csv
 ```shell
 cat file.tsv | cut -f - --output-delimiter , > file.csv
 ```
+
+print unique values in second column
+```shell
+cat file.tsv | cut -f2 | uniq
+```
 ## Linux basics
 show the size of subdirectories
 ```shell
