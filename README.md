@@ -41,6 +41,11 @@ count the number of reads in gzipped fastq files
 ```shell
 zcat SRR1234567/SRR1234567.fastq.gz | echo $((`wc -l` / 4))
 ```
+## grep
+print files in current directory which contain a pattern
+```shell
+grep -l <pattern> *
+```
 
 ## cut
 print only the second column of the tab-delimited file
