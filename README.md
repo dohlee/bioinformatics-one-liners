@@ -44,7 +44,7 @@ zcat SRR1234567/SRR1234567.fastq.gz | echo $((`wc -l` / 4))
 
 fastq-dump best practice
 ```shell
-fastq-dump --split-files --skip-technical --gzip --readids --clip --read-filter pass <SRR->
+fastq-dump --split-3 --skip-technical --gzip --readids --clip --read-filter pass <SRR->
 ```
 ## grep
 print files in current directory which contain a pattern
