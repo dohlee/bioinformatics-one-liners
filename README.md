@@ -51,6 +51,11 @@ print files in current directory which contain a pattern
 ```shell
 grep -l <pattern> *
 ```
+## join [(tutorial)](https://shapeshed.com/unix-join/)
+join lines of two files on a common field in the first column
+```shell
+join file1.txt file2.txt > out.txt
+```
 ## cut
 print only the second column of the tab-delimited file
 ```shell
