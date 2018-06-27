@@ -101,6 +101,11 @@ prepend a line to a file
 ```shell
 sed '1i header' file.txt > prepended_file.txt
 ```
+
+iterate over files in a directory
+```shell
+for f in *.sra; do fastq-dump $f; done
+```
 ## Statistics
 Multiple testing correction
 ```python
