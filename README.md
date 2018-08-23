@@ -46,6 +46,13 @@ fastq-dump best practice
 ```shell
 fastq-dump --split-3 --skip-technical --gzip --readids --clip --read-filter pass <SRR->
 ```
+
+use ascp to prefetch sra files ([aspera-connect](https://downloads.asperasoft.com/) required, and use absolute path for aspera)
+```shell
+prefetch --ascp-path \
+'/path/to/home/.aspera/connect/bin/ascp|/path/to/home/.aspera/connect/etc/asperaweb_id_dsa.openssh' \
+--ascp-options -l150M SRR1234567
+```
 ## grep
 print files in current directory which contain a pattern
 ```shell
