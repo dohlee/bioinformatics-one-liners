@@ -63,6 +63,21 @@ join lines of two files on a common field in the first column
 ```shell
 join file1.txt file2.txt > out.txt
 ```
+## comm (mnemonics: `common`)
+print only lines common to both files
+```shell
+comm -12 <(sort file1) <(sort file2)
+```
+
+print only lines unique to first file
+```shell
+comm -23 <(sort file1) <(sort file2)
+```
+
+print only lines unique to second file
+```shell
+comm -13 <(sort file1) <(sort file2)
+```
 ## cut
 print only the second column of the tab-delimited file
 ```shell
