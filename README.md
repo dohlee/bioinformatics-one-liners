@@ -78,6 +78,11 @@ print only lines unique to second file
 ```shell
 comm -13 <(sort file1) <(sort file2)
 ```
+
+print only lines common to three files
+```shell
+comm -12 <(sort file1) <(sort file2) | comm -12 <(sort file3) -
+```
 ## cut
 print only the second column of the tab-delimited file
 ```shell
