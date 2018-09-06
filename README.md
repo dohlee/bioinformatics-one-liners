@@ -42,6 +42,11 @@ count the number of reads in gzipped fastq files
 zcat SRR1234567/SRR1234567.fastq.gz | echo $((`wc -l` / 4))
 ```
 
+concatenate multiple fastq.gz files (just use cat!)
+```shell
+cat sample1.fastq.gz sample2.fastq.gz sample3.fastq.gz > concatenated.fastq.gz
+```
+
 fastq-dump best practice
 ```shell
 fastq-dump --split-3 --skip-technical --gzip --readids --clip --read-filter pass <SRR->
