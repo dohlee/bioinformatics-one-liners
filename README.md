@@ -4,11 +4,11 @@ Useful bioinformatics one-line commands.
 ## Fetch annotations
 get CpG Island annotation in BED format ([ref](https://www.biostars.org/p/236141/), [BEDOPS](https://bedops.readthedocs.io/en/latest/) needed)
 ```shell
-$ wget -qO- http://hgdownload.cse.ucsc.edu/goldenpath/hg38/database/cpgIslandExt.txt.gz \
-   | gunzip -c \
-   | awk 'BEGIN{ OFS="\t"; }{ print $2, $3, $4, $5$6, substr($0, index($0, $7)); }' \
-   | sort-bed - \
-   > cpgIslandExt.hg38.bed
+wget -qO- http://hgdownload.cse.ucsc.edu/goldenpath/hg38/database/cpgIslandExt.txt.gz \
+  | gunzip -c \
+  | awk 'BEGIN{ OFS="\t"; }{ print $2, $3, $4, $5$6, substr($0, index($0, $7)); }' \
+  | sort-bed - \
+  > cpgIslandExt.hg38.bed
 ```
 ## samtools [(doc)](http://www.htslib.org/doc/samtools.html)
 sort sam/bam files
