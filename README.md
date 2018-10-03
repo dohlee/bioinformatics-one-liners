@@ -98,9 +98,9 @@ print only lines common to three files
 comm -12 <(sort file1) <(sort file2) | comm -12 <(sort file3) -
 ```
 ## tr (mnemonics: `translate`)
-reverse-complement
+get complementary DNA sequence
 ```shell
-echo ATGCTGTAGTC | tr 'ACGT' 'TGCA'
+echo ATGCTGTAGTC | rev | tr 'ACGT' 'TGCA'
 ```
 ## cut
 print only the second column of the tab-delimited file
