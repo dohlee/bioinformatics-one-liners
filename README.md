@@ -72,6 +72,11 @@ print files in current directory which contain a pattern
 ```shell
 grep -l <pattern> *
 ```
+## sed
+extract desired part of each line using substitution
+```shell
+cat file | sed -e 's/.*\([0-9]*\).*/\1/'
+```
 ## join [(tutorial)](https://shapeshed.com/unix-join/)
 join lines of two files on a common field in the first column
 ```shell
@@ -157,7 +162,6 @@ show from the a-th line to the b-th line of a file
 ```shell
 head file -n $b | tail -n $(($b-$a+1))
 ```
-
 ## Statistics
 Multiple testing correction
 ```python
