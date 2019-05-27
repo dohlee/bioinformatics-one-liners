@@ -152,6 +152,12 @@ iterate over files in a directory
 ```shell
 for f in *.sra; do fastq-dump $f; done
 ```
+
+show from the a-th line to the b-th line of a file
+```shell
+head file -n $b | tail -n $(($b-$a+1))
+```
+
 ## Statistics
 Multiple testing correction
 ```python
