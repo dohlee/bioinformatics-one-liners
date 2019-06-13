@@ -21,6 +21,11 @@ index sam/bam files (this creates SRR1234567.sorted.bam.bai file)
 samtools index SRR1234567/SRR1234567.sorted.bam
 ```
 
+get alignments on chromosome 20 only
+```shell
+samtools view SRR1234567/SRR1234567.bam chr20 -b > SRR1234567/SRR1234567_chr20.bam
+```
+
 count the number of reads in sam/bam files
 ```shell
 samtools view -c SRR1234567/SRR1234567.bam
