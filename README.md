@@ -1,6 +1,12 @@
 # bioinformatics-one-liners
 Useful bioinformatics one-line commands.
 
+## Indexing files
+Indexing gtf files with tabix can be tricky. (from Book [Bioinformatics Data Skills](https://www.amazon.com/Bioinformatics-Data-Skills-Reproducible-Research/dp/1449367372))
+```shell
+(zgrep -v "^#" gencode.v32.annotation.gtf.gz | sort -k1,1 -k4,4n) | bgzip > gencode.v32.annotation.gtf.bgz
+```
+
 ## Fetch annotations
 get CpG Island annotation in BED format ([ref](https://www.biostars.org/p/236141/), [BEDOPS](https://bedops.readthedocs.io/en/latest/) needed)
 ```shell
