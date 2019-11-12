@@ -52,6 +52,11 @@ show statistics of sam/bam files
 ```shell
 samtools stats SRR1234567/SRR1234567.bam
 ```
+
+check whether my alignment file is sorted lexicographically (list all the chromosomes)
+```shell
+samtools view SRR1234567/SRR1234567.bam | cut -f3 | uniq
+```
 ## Dealing with fastq files
 count the number of reads in fastq files
 ```shell
