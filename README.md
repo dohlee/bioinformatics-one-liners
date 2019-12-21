@@ -21,7 +21,10 @@ wget -qO- http://hgdownload.cse.ucsc.edu/goldenpath/hg38/database/cpgIslandExt.t
 ## Dealing with gtfs
 extract genomic intervals of genes in BED format from GENCODE annotation
 ```
-cat gencode.v32lift37.annotation.gtf | grep -v '^#' | awk 'BEGIN {FS="\t"; OFS="\t"} {if ($3 == "gene") print $1,$4,$5,$9,$6,$7}' > gencode.v32lift37.genes.bed'
+cat gencode.v32lift37.annotation.gtf \
+  | grep -v '^#' \
+  | awk 'BEGIN {FS="\t"; OFS="\t"} {if ($3 == "gene") print $1,$4,$5,$9,$6,$7}' \
+  > gencode.v32lift37.genes.bed'
 ```
 
 ## samtools [(doc)](http://www.htslib.org/doc/samtools.html)
