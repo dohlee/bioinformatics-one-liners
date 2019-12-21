@@ -18,9 +18,9 @@ wget -qO- http://hgdownload.cse.ucsc.edu/goldenpath/hg38/database/cpgIslandExt.t
   > cpgIslandExt.hg38.bed
 ```
 
-## Dealing with gtfs
+## Dealing with genomic annotations
 extract genomic intervals of genes in BED format from GENCODE annotation
-```
+```shell
 cat gencode.v32lift37.annotation.gtf \
   | grep -v '^#' \
   | grep '^chr' \
@@ -28,6 +28,13 @@ cat gencode.v32lift37.annotation.gtf \
   | bedtools sort -i stdin \
   > gencode.v32lift37.genes.bed
 ```
+
+annotate peaks (e.g. ChIP-seq) with closest 5 genes that are at most 3kb away
+```shell
+bedtools closest -a peaks.bed -b gencode.v32lift37.genes.bed -d -k 5 \
+  | awk 'BEGIN {FS="\t"; OFS="\t"} {if (-3000 <= $17 && $17 <= 3000) print $1,$2,$3,$14,$16,$17} \
+  > peaks.annotated.bed
+``
 
 ## samtools [(doc)](http://www.htslib.org/doc/samtools.html)
 sort sam/bam files
