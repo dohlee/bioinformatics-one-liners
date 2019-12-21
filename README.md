@@ -8,7 +8,7 @@ Indexing gtf files with tabix can be tricky. (from Book [Bioinformatics Data Ski
 && tabix -p gff gencode.v32.annotation.gtf.bgz
 ```
 
-## Fetch annotations
+## Fetching annotations
 get CpG Island annotation in BED format ([ref](https://www.biostars.org/p/236141/), [BEDOPS](https://bedops.readthedocs.io/en/latest/) needed)
 ```shell
 wget -qO- http://hgdownload.cse.ucsc.edu/goldenpath/hg38/database/cpgIslandExt.txt.gz \
@@ -17,6 +17,13 @@ wget -qO- http://hgdownload.cse.ucsc.edu/goldenpath/hg38/database/cpgIslandExt.t
   | sort-bed - \
   > cpgIslandExt.hg38.bed
 ```
+
+## Dealing with gtfs
+extract genomic intervals of genes in BED format from GENCODE annotation
+```
+cat gencode.v32lift37.annotation.gtf | grep -v '^#' | awk 'BEGIN {FS="\t"; OFS="\t"} {if ($3 == "gene") print $1,$4,$5,$9,$6,$7}' > gencode.v32lift37.genes.bed'
+```
+
 ## samtools [(doc)](http://www.htslib.org/doc/samtools.html)
 sort sam/bam files
 ```shell
