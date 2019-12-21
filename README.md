@@ -23,8 +23,10 @@ extract genomic intervals of genes in BED format from GENCODE annotation
 ```
 cat gencode.v32lift37.annotation.gtf \
   | grep -v '^#' \
+  | grep '^chr' \
   | awk 'BEGIN {FS="\t"; OFS="\t"} {if ($3 == "gene") print $1,$4,$5,$9,$6,$7}' \
-  > gencode.v32lift37.genes.bed'
+  | bedtools sort -i stdin \
+  > gencode.v32lift37.genes.bed
 ```
 
 ## samtools [(doc)](http://www.htslib.org/doc/samtools.html)
