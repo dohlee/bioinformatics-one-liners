@@ -34,7 +34,7 @@ annotate peaks (e.g. ChIP-seq) with closest 5 genes that are at most 3kb away
 bedtools closest -a peaks.bed -b gencode.v32lift37.genes.bed -d -k 5 \
   | awk 'BEGIN {FS="\t"; OFS="\t"} {if (-3000 <= $17 && $17 <= 3000) print $1,$2,$3,$14,$16,$17} \
   > peaks.annotated.bed
-``
+```
 
 ## samtools [(doc)](http://www.htslib.org/doc/samtools.html)
 sort sam/bam files
