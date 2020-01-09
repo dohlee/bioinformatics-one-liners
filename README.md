@@ -36,6 +36,12 @@ bedtools closest -a peaks.bed -b gencode.v32lift37.genes.bed -d -k 5 \
   > peaks.annotated.bed
 ```
 
+## GDC API
+Map GDC file uuid to case barcode
+```
+curl 'https://api.gdc.cancer.gov/files/{file_uuid}?fields=cases.submitter_id&pretty=true'
+```
+
 ## samtools [(doc)](http://www.htslib.org/doc/samtools.html)
 sort sam/bam files
 ```shell
