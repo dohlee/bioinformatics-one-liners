@@ -36,6 +36,12 @@ bedtools closest -a peaks.bed -b gencode.v32lift37.genes.bed -d -k 5 \
   > peaks.annotated.bed
 ```
 
+## E-utilities
+Return a list of all Entrez database names
+```shell
+curl https://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi
+```
+
 ## GDC API
 Map GDC file uuid to case barcode
 ```
