@@ -88,6 +88,11 @@ check whether my alignment file is sorted lexicographically (list all the chromo
 ```shell
 samtools view SRR1234567/SRR1234567.bam | cut -f3 | uniq
 ```
+
+subsample aligned reads (e.g. use `-s 42.1` to use random seed 42 to subsample 0.1 (10%) of reads)
+```shell
+samtools view -s [SEED].[PROPORTION] SRR1234567/SRR1234567.bam
+```
 ## Dealing with fastq files
 count the number of reads in fastq files
 ```shell
