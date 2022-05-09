@@ -125,6 +125,11 @@ print files in current directory which contain a pattern
 ```shell
 grep -l <pattern> *
 ```
+
+discard alternate contigs from bed files (i.e. drop entries at chromosome named chr~\_alt or chr~\_random, ...)
+```shell
+cat my_intervals.bed | grep -E '^chr[0-9XY]+\s' > my_intervals.filtered.bed
+```
 ## sed
 extract desired part of each line using substitution
 ```shell
